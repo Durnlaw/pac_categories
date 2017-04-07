@@ -43,8 +43,3 @@ all_Data = []
 for item in state_List:
 	all_Data.append([item, OS_Search(item)])
 
-
-# 	json_obj = urlopen(final_url)
-# #tool to open the data in the terminal but is not converted from json 'text'
-# 	data = json.load(json_obj)
-# #converts it to 'readable' format. more like what it would look like in python. a dictionary!
