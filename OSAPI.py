@@ -46,6 +46,13 @@ def OS_Search(item):
 		for line in json_data:
 			writer.writerow(line)
 
+# replace with below. it will most likely require editing. this is original from andrew
+# 	# f = open('mycsvfile.csv','wb')
+	# w = csv.DictWriter(f,my_dict.keys())
+	# w.writerows(my_dict)
+	# f.close()
+
+
 all_Data = []
 for item in state_List:
 	all_Data.append([item, OS_Search(item)])
