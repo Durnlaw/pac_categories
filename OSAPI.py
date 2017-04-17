@@ -6,14 +6,16 @@
 import urllib.request
 import json
 import pprint
+import csv
 
 printer = pprint.PrettyPrinter(indent=4)
 OS_API = '32cabcec9c4b9305dc3b94acd5109c9e'
-state_List = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
-          'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
-          'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 
-          'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
-          'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+state_List = ['AL']
+# , 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
+#           'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
+#           'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 
+#           'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
+#           'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 
 def OS_Search(item):
 	api_key = OS_API
@@ -39,6 +41,11 @@ def OS_Search(item):
 # printer.pprint(json_data['response']['legislator'].keys()) 
 	# this will let you check what the keys are in the data field names. 
 	# might have to repeat several times, they are nested
+	with open('C:\Programming\OSAPI\\test.csv', "w") as csvfile:
+		writer = csv.writer(csvfile, delimiter=',')
+		for line in json_data:
+			writer.writerow(line)
+
 all_Data = []
 for item in state_List:
 	all_Data.append([item, OS_Search(item)])
