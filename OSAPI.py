@@ -41,10 +41,10 @@ def OS_Search(item):
 # printer.pprint(json_data['response']['legislator'].keys()) 
 	# this will let you check what the keys are in the data field names. 
 	# might have to repeat several times, they are nested
-	with open('C:\Programming\OSAPI\\test.csv', "w") as csvfile:
-		writer = csv.writer(csvfile, delimiter=',')
-		for line in json_data:
-			writer.writerow(line)
+	csvfile = open('C:\Programming\OSAPI\\test.csv', "w")
+		writer = csv.Dictwriter(csvfile, json_data['response']['legislator']['@attributes'].keys())
+		writer.writerows(json_data)
+		csvfile.close()
 
 # replace with below. it will most likely require editing. this is original from andrew
 # 	# f = open('mycsvfile.csv','wb')
