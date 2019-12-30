@@ -6,22 +6,20 @@
 import urllib.request
 import json
 import pprint
-import csv
 
 printer = pprint.PrettyPrinter(indent=4)
 OS_API = '32cabcec9c4b9305dc3b94acd5109c9e'
-state_List = ['AL']
-# , 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
-#           'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
-#           'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 
-#           'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
-#           'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+state_List = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
+          'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 
+          'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 
+          'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 
+          'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 
 def OS_Search(item):
 	api_key = OS_API
 	url_Base = 'https://www.opensecrets.org/api/?method=getLegislators'
 # state = 'NJ'
-	state = itemN
+	state = item
 	output = 'json'
 	final_url = url_Base + "&id=" + state + "&apikey=" + api_key + '&output=' + output
 	# I am trying this in the loop, but I don't think it is necessary or advised.
@@ -41,23 +39,12 @@ def OS_Search(item):
 # printer.pprint(json_data['response']['legislator'].keys()) 
 	# this will let you check what the keys are in the data field names. 
 	# might have to repeat several times, they are nested
-	csvfile = open('C:\Programming\OSAPI\\test.csv', "w")
-		writer = csv.Dictwriter(csvfile, json_data['response']['legislator']['@attributes'].keys())
-		writer.writerows(json_data)
-		csvfile.close()
-
 all_Data = []
 for item in state_List:
 	all_Data.append([item, OS_Search(item)])
 
-https://www.opensecrets.org/api/?method=getLegislators&id=AL&apikey=32cabcec9c4b9305dc3b94acd5109c9e&output=json
 
-
-def do something(array):
-	arr = array.copy()
-	do something to arr
-	return arr
-
-
-
-
+# 	json_obj = urlopen(final_url)
+# #tool to open the data in the terminal but is not converted from json 'text'
+# 	data = json.load(json_obj)
+# #converts it to 'readable' format. more like what it would look like in python. a dictionary!
