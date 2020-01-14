@@ -1,4 +1,4 @@
-#getLegislators pulls basic info for legislators by state
+
 
 import urllib.request
 import json
@@ -10,21 +10,12 @@ printer = pprint.PrettyPrinter(indent=4)
 
 
 OS_API = '3f4cda9299c74fc3c21ff8e077a7a6e1'
-state_List = [
-    'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA'
-    , 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD'
-    , 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ'
-    , 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC'
-    , 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
-    ]
 
-def OS_Search(item):
+def OS_donations(cand, cycle):
     api_key = OS_API
-    url_Base = 'https://www.opensecrets.org/api/?method=getLegislators'
-# state = 'NJ'
-    state = item
+    url_Base = 'https://www.opensecrets.org/api/?method=candContrib'
     output = 'json'
-    final_url = url_Base + "&id=" + state + "&apikey=" + api_key + '&output=' + output
+    final_url = url_Base + "&cid=" + cand + "&cycle=" + cycle + "&apikey=" + api_key + '&output=' + output
 
     #. Pretend to be Mozilla. This might need to be updated.
     #. Make a variable for the request when a specific url.
@@ -38,40 +29,63 @@ def OS_Search(item):
     body = return_value.read()
 
     #. Decode to utf-8 by default
-    #! Worked before, could cause problems this time
     decoded_body = body.decode('utf-8')
     json_data = json.loads(decoded_body)
 
-    #. Ok. Let's get these legislators into a dataframe
-    legislators = pd.DataFrame()
-    incr = 0
-    #. Carve down to each legislator themselves
-    real_json_data = json_data['response']['legislator']
-    #. Turn each row into a dataframe and append them together
-    for data_point in real_json_data:
-        leg_data = data_point['@attributes']
-        leg_data_pd = pd.DataFrame(leg_data, index = [incr])
-        legislators = legislators.append(leg_data_pd)
-        incr +=1
-    return (legislators)
+    #. Let's drill into the canididate information
+    cand_json_data = json_data['response']['contributors']['@attributes']
+    my_dict = {}
+    my_dict['cand_name']=cand_json_data.get('cand_name')
+    my_dict['cid']=cand_json_data.get('cid')
+    print(my_dict)
+
+    #. Holder for all legislator donations
+    leg_donations = []
+
+    #. Now that we have the cand info, let's tack on the PAC information
+    contrib_json_data = json_data['response']['contributors']['contributor']
+    iter = 0
+    for y in contrib_json_data:
+        my_dict2 = {}
+        #. Bring the cand info forward
+        my_dict2['cand_name'] = my_dict['cand_name']
+        my_dict2['cid'] = my_dict['cid']
+
+        #. Call the new information and add it next to the candidate info
+        my_dict2['total'] = contrib_json_data[iter].get('@attributes').get('total')
+        my_dict2['org_name'] = contrib_json_data[iter].get('@attributes').get('org_name')
+        my_dict2['pacs'] = contrib_json_data[iter].get('@attributes').get('pacs')
+        my_dict2['indivs'] = contrib_json_data[iter].get('@attributes').get('indivs')
+        iter+=1
+        #. Append all info to the same list
+        leg_donations.append(my_dict2)
+
+    #. Turn it into a dataframe
+    leg_don_pd = pd.DataFrame(leg_donations)
+    print(leg_don_pd)
+
+
 
 #     #. Let's print this info
 #     legislators.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\legislators.csv')
 
-# OS_Search('DE')
+    # return (legislators)
+
+
+OS_donations('N00007360', '2020')
 # exit()
 
 
 
 
-#. OS_Search(state_List)
-all_Data = pd.DataFrame()
-for item in state_List:
-    print(item)
-    all_Data = all_Data.append(OS_Search(item))
+# #. OS_Search(state_List)
+# all_Data = pd.DataFrame()
+# for item in state_List:
+#     print(item)
+#     all_Data = all_Data.append(OS_Search(item))
 
-#. Let's print this info
-all_Data.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\legislators.csv')
+# #. Let's print this info
+# all_Data.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\legislators.csv')
 
 
 
