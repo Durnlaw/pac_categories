@@ -61,23 +61,32 @@ def OS_donations(cand, cycle):
 
     #. Turn it into a dataframe
     leg_don_pd = pd.DataFrame(leg_donations)
+    leg_don_pd['cycle'] = cycle
     print(leg_don_pd)
     return(leg_don_pd)
 
 
+leg_data = pd.read_csv(filepath_or_buffer  = 'C:\\Programming\\repos\\Open-secrets\\leg_2010.csv')
 
-#     #. Let's print this info
-#     legislators.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\legislators.csv')
+leg_id = leg_data['opensecrets'].values.tolist()
+cycle_id = leg_data['cycle'].astype(str).values.tolist()
 
-    # return (legislators)
+print(len(leg_id))
+print(len(cycle_id))
 
-a = ['N00007360', 'N00007360']
-b = ['2020', '2018']
+
+
+# leg_id = ['N00007360', 'N00007360', 'N00007360']
+# cycle_id = ['2020', '2018', '2016']
 
 final_donations = pd.DataFrame()
 test_iter = 0
-for item in a:
-    final_donations = final_donations.append(OS_donations(a[test_iter],b[test_iter]))
+for item in leg_id:
+    if test_iter <= 190:
+        print(leg_id[test_iter],cycle_id[test_iter])
+        final_donations = final_donations.append(OS_donations(leg_id[test_iter],cycle_id[test_iter]))
+    else:
+        break
     test_iter+=1
 
 print(final_donations.count())
@@ -85,10 +94,10 @@ print(final_donations.count())
 
 
 
-
+#. Let's print this info
+final_donations.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\\os_pac_data\\first191.csv')
 
 # exit()
-
 
 
 
