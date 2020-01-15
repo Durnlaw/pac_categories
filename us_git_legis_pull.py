@@ -52,6 +52,7 @@ def leg_pull(item):
             my_dict2['last'] = my_dict['last']
             my_dict2['first_last'] = my_dict['first_last']
             my_dict2['term_count'] = y_iter
+            my_dict2['type'] = y.get('type')
             my_dict2['term_start'] = y.get('start')
             my_dict2['term_end'] = y.get('end')
             y_iter +=1
@@ -98,14 +99,19 @@ sources = [
 
 
 #. Pull from both sources!
-final_results = pd.DataFrame()
+cmbnd_results = pd.DataFrame()
 for item in sources:
     print(item)
-    final_results = final_results.append(leg_pull(item))
-print(final_results.count())
+    cmbnd_results = cmbnd_results.append(leg_pull(item))
+print(cmbnd_results.count())
+
+#. We need to add some legislator term cycle information in to this dataframe. As in when the election cycle was.
+cmbnd_results['cycle'] = cmbnd_results['term_start'].astype(str).str[:4].astype(int) - 1
+print(cmbnd_results.head())
 
 
 #. Let's print this info
+final_results = cmbnd_results
 final_results.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\leg_2010.csv')
 
 

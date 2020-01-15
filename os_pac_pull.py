@@ -37,7 +37,6 @@ def OS_donations(cand, cycle):
     my_dict = {}
     my_dict['cand_name']=cand_json_data.get('cand_name')
     my_dict['cid']=cand_json_data.get('cid')
-    print(my_dict)
 
     #. Holder for all legislator donations
     leg_donations = []
@@ -63,6 +62,7 @@ def OS_donations(cand, cycle):
     #. Turn it into a dataframe
     leg_don_pd = pd.DataFrame(leg_donations)
     print(leg_don_pd)
+    return(leg_don_pd)
 
 
 
@@ -71,8 +71,22 @@ def OS_donations(cand, cycle):
 
     # return (legislators)
 
+a = ['N00007360', 'N00007360']
+b = ['2020', '2018']
 
-OS_donations('N00007360', '2020')
+final_donations = pd.DataFrame()
+test_iter = 0
+for item in a:
+    final_donations = final_donations.append(OS_donations(a[test_iter],b[test_iter]))
+    test_iter+=1
+
+print(final_donations.count())
+
+
+
+
+
+
 # exit()
 
 
