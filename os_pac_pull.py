@@ -5,6 +5,7 @@ import json
 import pprint
 import pandas as pd
 import csv
+import time
 #? Not sure what this does.
 printer = pprint.PrettyPrinter(indent=4)
 
@@ -16,6 +17,7 @@ def OS_donations(cand, cycle):
     url_Base = 'https://www.opensecrets.org/api/?method=candContrib'
     output = 'json'
     final_url = url_Base + "&cid=" + cand + "&cycle=" + cycle + "&apikey=" + api_key + '&output=' + output
+    print(final_url)
 
     #. Pretend to be Mozilla. This might need to be updated.
     #. Make a variable for the request when a specific url.
@@ -71,8 +73,8 @@ leg_data = pd.read_csv(filepath_or_buffer  = 'C:\\Programming\\repos\\Open-secre
 leg_id = leg_data['opensecrets'].values.tolist()
 cycle_id = leg_data['cycle'].astype(str).values.tolist()
 
-print(len(leg_id))
-print(len(cycle_id))
+print("leg id count: ", len(leg_id))
+print("cycle id count: ", len( cycle_id))
 
 
 
@@ -80,11 +82,12 @@ print(len(cycle_id))
 # cycle_id = ['2020', '2018', '2016']
 
 final_donations = pd.DataFrame()
-test_iter = 0
+test_iter = 191
 for item in leg_id:
-    if test_iter <= 190:
+    if test_iter <= 377:
         print(leg_id[test_iter],cycle_id[test_iter])
         final_donations = final_donations.append(OS_donations(leg_id[test_iter],cycle_id[test_iter]))
+        time.sleep(2)
     else:
         break
     test_iter+=1
@@ -95,7 +98,7 @@ print(final_donations.count())
 
 
 #. Let's print this info
-final_donations.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\\os_pac_data\\first191.csv')
+final_donations.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\\os_pac_data\\192-377.csv')
 
 # exit()
 
