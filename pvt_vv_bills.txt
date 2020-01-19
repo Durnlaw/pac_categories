@@ -1,7 +1,0 @@
-
-import pandas as pd
-
-
-
-def bill_pvt
-final_results.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\leg_2010.csv')
