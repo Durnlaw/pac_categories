@@ -112,7 +112,7 @@ print(cmbnd_results.head())
 
 #. Let's print this info
 final_results = cmbnd_results
-final_results.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\leg_2010.csv')
+final_results.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\data\\leg_2010.csv')
 
 
 

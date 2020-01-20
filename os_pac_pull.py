@@ -64,11 +64,11 @@ def OS_donations(cand, cycle):
     #. Turn it into a dataframe
     leg_don_pd = pd.DataFrame(leg_donations)
     leg_don_pd['cycle'] = cycle
-    print(leg_don_pd)
+    print(cand, cycle, "Done")
     return(leg_don_pd)
 
 
-leg_data = pd.read_csv(filepath_or_buffer  = 'C:\\Programming\\repos\\Open-secrets\\leg_2010.csv')
+leg_data = pd.read_csv(filepath_or_buffer  = 'C:\\Programming\\repos\\Open-secrets\\data\\leg_2010.csv')
 
 leg_id = leg_data['opensecrets'].values.tolist()
 cycle_id = leg_data['cycle'].astype(str).values.tolist()
@@ -81,37 +81,83 @@ print("cycle id count: ", len( cycle_id))
 # leg_id = ['N00007360', 'N00007360', 'N00007360']
 # cycle_id = ['2020', '2018', '2016']
 
+#> Ok we have to set up the actual loops that call the API now. The overall goal is to get our program to call
+#> the full 200 limit each day, but avoid problems we have with getting kicked out of the API early. 
+#> So we have some if criteria to write to a csv intermittently, so that if we get kicked we don't lose much.
+
+#. Set the limits of starting and ending
+start_row = 432
+end_row = 632
+
+#. Set the limits to be used in the for loop
+test_iter = start_row - 1
+test_end = end_row - 1
+
+#. Set up a dataframe for storage
 final_donations = pd.DataFrame()
-test_iter = 191
-for item in leg_id:
-    if test_iter <= 377:
+
+
+
+#. For each row in the leg_2010 file
+for polit_cycle in leg_id:
+
+    #. First if logic. If it's the first run, we don't want it printing a csv of one. This means if we
+    #. start on a # divisible by 5, then the next csv pushed will be 6 rows long.
+    if test_iter == start_row - 1:
+        print('start')
         print(leg_id[test_iter],cycle_id[test_iter])
-        final_donations = final_donations.append(OS_donations(leg_id[test_iter],cycle_id[test_iter]))
-        time.sleep(2)
-    else:
-        break
-    test_iter+=1
+        final_donations = final_donations.append(
+                                OS_donations(leg_id[test_iter], cycle_id[test_iter]))
+        time.sleep(8)
+        test_iter+=1
 
-print(final_donations.count())
+    #. This part will push a csv any time it is divisible by 5
+    elif test_iter%5 == 0:
+        print('Excel else')
+        print(leg_id[test_iter],cycle_id[test_iter])
+        final_donations = final_donations.append(
+                                OS_donations(leg_id[test_iter], cycle_id[test_iter]))
+        path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\{0}.csv'.format(test_iter)
+        final_donations.to_csv(path_or_buf = path)
+        time.sleep(8)
+        test_iter+=1
+        #. Blank the dataframe so it's clean for next run
+        final_donations = pd.DataFrame()
+
+    #. Now let's print the last group following a 5 that don't end in a 5 modulo.
+    elif test_iter == end_row - 1:
+        print('End')
+        print(leg_id[test_iter],cycle_id[test_iter])
+        final_donations = final_donations.append(
+                                OS_donations(leg_id[test_iter], cycle_id[test_iter]))
+        path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\{0}.csv'.format(test_iter)
+        final_donations.to_csv(path_or_buf = path)
+        time.sleep(8)
+        test_iter+=1
+        #. Blank the dataframe so it's clean for next run
+        final_donations = pd.DataFrame()
+
+    #. Last one will simply add to final_donations each time it isn't divisible by 5
+    elif test_iter%5 != 0:
+        print('Not Excel')
+        print(leg_id[test_iter],cycle_id[test_iter])
+        final_donations = final_donations.append(
+                                OS_donations(leg_id[test_iter], cycle_id[test_iter]))
+        time.sleep(8)
+        test_iter+=1
 
 
 
 
-#. Let's print this info
-final_donations.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\\os_pac_data\\192-377.csv')
-
-# exit()
 
 
 
-# #. OS_Search(state_List)
-# all_Data = pd.DataFrame()
-# for item in state_List:
-#     print(item)
-#     all_Data = all_Data.append(OS_Search(item))
 
-# #. Let's print this info
-# all_Data.to_csv(path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\legislators.csv')
+
+
+
+
+
 
 
 
