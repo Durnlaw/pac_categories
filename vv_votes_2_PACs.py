@@ -31,8 +31,7 @@ def vote_pvt(cycle):
     #. Get pivoting!
     pvt = pvt_prep.pivot(index='icpsr', columns = 'house_cyc_roll_bill', values= 'cast_code')
     print(pvt.iloc[0:2, 0:5])
-    print('Cycle', cycle, 'columns:', len(pvt.columns))
-    print('Cycle', cycle, 'rows:', pvt.shape)
+    print('Cycle', cycle, 'shape:', pvt.shape)
 
     return pvt
 
@@ -40,21 +39,21 @@ def vote_pvt(cycle):
 file = [113,114, 115, 116]
 
 #. Append them all together and print it out as a csv for later use.
-votes_as_columns = pd.DataFrame()
+votes_list = []
 for x in file:
     print('Cycle: ', x)
     print('====================================================================================')
     print(' ')
-    votes_as_columns = votes_as_columns.append(vote_pvt(x), ignore_index = True, sort = False)
+    votes_list.append(vote_pvt(x))
     # print(key_list.count())
 
-# votes_as_columns = pd.concat(votes_list, ignore_index = True, sort=False)
-print(len(votes_as_columns.columns))
-print(votes_as_columns.shape)
+votes_as_columns = pd.concat(votes_list, axis = 1)
+# , ignore_index = True, sort=False
+print('Final shape:',votes_as_columns.shape)
+# print(votes_as_columns['icpsr'].unique().count())
 
-#! Ok. So the problem is that you can't collapse the congresspeople into one row for some reason
 
-
+#! This thing is too large to really print to a csv usefully, so we are starting the next step of the proj in this same program
 #. Nice job. Print this sucker.
 # votes_as_columns.to_csv(
 #     path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\data\\vv_votes_cols.csv')
