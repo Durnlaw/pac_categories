@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import io
 import os
 
 pd.set_option('display.max_rows', None)
@@ -63,15 +64,13 @@ leg_2010_key = leg_2010_key[['first', 'last', 'first_last', 'bioguide', 'icpsr',
 print('Legislator dedup shape', leg_2010_key.shape)
 
 
-#> Now let's open "A FILE" that has the PAC information in it.
-#? Realistically this will have to be a pull of many files that we concat together
-
-os_pac_file_names = ['245', '250']
-
+#> Time to pull in every OS_pac file we have.
 os_pac_list = []
-for file in os_pac_file_names:
-    os_pac_path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\{}.csv'.format(file)
-    os_pac_file = pd.read_csv(os_pac_path)
+os_pac_path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\'
+for filename in os.listdir(os_pac_path):
+    # t = '{}'.format(filename).encode('utf-8').decode('utf-8')
+    print(filename)
+    os_pac_file = pd.read_csv(os_pac_path+filename)
 
     #. Select only needed rows
     os_pac_data = os_pac_file[['org_name', 'indivs', 'pacs', 'total', 'cid']]
@@ -88,19 +87,40 @@ print(grouped_pac_data.head(5))
 
 
 
-#> Alright, now we need to merge the other id's and names of each congressperson to the grouped_pac_data
+#. Alright, now we need to merge the other id's and names of each congressperson to the grouped_pac_data
 grouped_pac_cand_data = pd.merge(grouped_pac_data, leg_2010_key, left_on='cid', right_on='opensecrets')
 print('PAC data and congresspeople shape:', grouped_pac_cand_data.shape)
 print(grouped_pac_cand_data.head(5))
 
 
 
-#> Ok. Now let's get the vote data (in all it's glory) and attach it to the right of the grouped_pac_cand_data
+#. Ok. Now let's get the vote data (in all it's glory) and attach it to the right of a trimmed grouped_pac_cand_data
 grouped_pac_cand_vote_data = pd.merge(grouped_pac_cand_data, votes_as_columns, on='icpsr')
-print('PAC data, congresspeople, votes shape:', grouped_pac_cand_vote_data.shape)
-# print(grouped_pac_cand_vote_data.head(5))
+grouped_pac_vote_data = grouped_pac_cand_vote_data.drop(['cid', 'first', 'last', 'first_last', 'bioguide', 'icpsr', 'opensecrets'],
+                                                        axis = 1)
+print('PAC data and votes shape:', grouped_pac_vote_data.shape)
 
-sum_pac_vote_data = grouped_pac_cand_vote_data.iloc[pd.np.c_[0, 11:]]
+#. Now we sum based on org_name and have all of paid votes by bill by each PAC. 
+sum_pac_vote_data = grouped_pac_vote_data.groupby(['org_name'], as_index=False).sum()
 print(sum_pac_vote_data.shape)
 
-# grouped_pac_cand_vote_data.groupby(['org'])
+#. Let's confirm that the max is not ridiculously low or high.
+temp = sum_pac_vote_data.drop(['org_name', 'indivs', 'pacs', 'total'], axis = 1)
+maxValue = temp[:].max()
+print(maxValue.head(5))
+print(maxValue.max())
+
+
+#> Data file done! Let's try to print to a csv then reopen to see if everything is preserved. Not sure if it will be
+print(sum_pac_vote_data.iloc[:, 11:].sum().sum())
+sum_pac_vote_data.to_csv(
+    path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\data\\sum_pac_vote_data.csv')
+
+#! When I reopen this file, it adds an index (extra column).
+test_path = 'C:\\Programming\\repos\\Open-secrets\\data\\sum_pac_vote_data.csv'
+test_file = pd.read_csv(test_path)
+#. We move the iloc out one column to account for the index column that gets added.
+print(test_file.iloc[:, 12:].sum().sum())
+print(test_file.shape)
+
+

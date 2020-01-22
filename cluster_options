@@ -1,0 +1,17 @@
+Maybe: 
+
+K-Means							Not consistent, but fast, scales better than birch
+Affinity propagation			For small to medium data, finds clusters on it's own.
+Mean-shift						I don't choose clusters, but I pick radiuses which can be tough
+Spectral clustering				Works on small amount of clusters (at least 7 or less (Mike Feyder))
+Ward hierarchical clustering	Variance minimize approach that is like a decision tree from bottom-up clustering
+Agglomerative clustering		Good at figuring out heirarchies, like a decision tree. (diff from above somehow)
+Gaussian mixtures				Supports multi-cluster ownership and ellipse clusters
+
+
+
+NO:
+
+DBSCAN							Specifically doesn't work with high dimensional data
+OPTICS							Similar to DBSCAN but will more often mark periphery points as noise
+birch							Cannot support more dimensions than 20
