@@ -86,8 +86,8 @@ print("cycle id count: ", len( cycle_id))
 #> So we have some if criteria to write to a csv intermittently, so that if we get kicked we don't lose much.
 
 #. Set the limits of starting and ending
-start_row = 432
-end_row = 632
+start_row = 632
+end_row = 831
 
 #. Set the limits to be used in the for loop
 test_iter = start_row - 1
@@ -108,7 +108,7 @@ for polit_cycle in leg_id:
         print(leg_id[test_iter],cycle_id[test_iter])
         final_donations = final_donations.append(
                                 OS_donations(leg_id[test_iter], cycle_id[test_iter]))
-        time.sleep(8)
+        time.sleep(10)
         test_iter+=1
 
     #. This part will push a csv any time it is divisible by 5
@@ -119,7 +119,7 @@ for polit_cycle in leg_id:
                                 OS_donations(leg_id[test_iter], cycle_id[test_iter]))
         path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\{0}.csv'.format(test_iter)
         final_donations.to_csv(path_or_buf = path)
-        time.sleep(8)
+        time.sleep(10)
         test_iter+=1
         #. Blank the dataframe so it's clean for next run
         final_donations = pd.DataFrame()
@@ -132,7 +132,7 @@ for polit_cycle in leg_id:
                                 OS_donations(leg_id[test_iter], cycle_id[test_iter]))
         path = 'C:\\Programming\\repos\\Open-secrets\\data\\os_pac\\{0}.csv'.format(test_iter)
         final_donations.to_csv(path_or_buf = path)
-        time.sleep(8)
+        time.sleep(10)
         test_iter+=1
         #. Blank the dataframe so it's clean for next run
         final_donations = pd.DataFrame()
@@ -143,7 +143,7 @@ for polit_cycle in leg_id:
         print(leg_id[test_iter],cycle_id[test_iter])
         final_donations = final_donations.append(
                                 OS_donations(leg_id[test_iter], cycle_id[test_iter]))
-        time.sleep(8)
+        time.sleep(10)
         test_iter+=1
 
 
