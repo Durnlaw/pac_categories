@@ -75,6 +75,6 @@ print(unique_keys.count())
 
 #. Nice job. Print this sucker.
 unique_keys.to_csv(
-    path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\vv_house_cyc_roll_bill_ids.csv',
+    path_or_buf = 'C:\\Programming\\repos\\Open-secrets\\data\\vv_house_cyc_roll_bill_ids.csv',
     header = 'house_cyc_roll_bill')
 
