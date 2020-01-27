@@ -1,0 +1,118 @@
+Application:
+
+Ethan Winter
+Bio info
+
+Working professional, seeking grad program
+Grad day: 5/10/14
+Transcript in Serious Resumes
+
+Rank prof in areas
+Comp Prog - Some
+Comp Sci - Some
+Trad Stat - Some
+Machine Learn - Some 
+Soc Sci - Some
+XP on real - Some
+Experi Design - None
+Data Manip - Expert
+Viz - Some
+
+Prog Lang
+Python - 5
+C - 1
+Other - 2
+
+Tell about prog xp:
+
+I am a self-taught programmer. My economics major taught me to analyze problems, but to solve them I learned Python. Python offers the flexibility to tackle most problems I run into. 
+
+An early professional project of mine concerned the automation of an excel report. The customers' manually created report frequently resulted in human-caused inaccuracies. I worked with the customer in a one-on-one environment to gather requirements, like including a QA process to garner trust in the automated report. Once they were comfortable, the new pandas-based report took over and was moved to production.
+
+Recently, I performed data entry duties with a political campaign. The campaign collected over ten thousand records that were entered into a browser-based system. After entering 100 names, I determined I could increase my input if I automated all non-keyboard activity. Using pyautogui, I built an algorithm in Python that input all constituent information, saved their profile, and returned to the starting page. While using this algorithm, I independently entered over one tenth of the records.
+
+Currently, I am working on a personal project that clusters political action committees based on their voting records in Congress (through donations to Congresspeople). This project utilizes csv, urllib.request, and json to pull data, performs pandas-based ETL work, and clusters in scikit-learn. The resulting clusters help to illustrate priorities of a PAC donations. All of this work is public on github.
+
+
+Data Analysis Tools
+R - 1
+SQL - 3
+GIS tools - 1
+Matlab - 1
+SAS - 1
+SPSS - 1
+Stata - 2
+Julia - 1
+Other - 1
+
+Data Analysis projects:
+PAC project: 
+IMR Univ study: Compare many datasets and show mean diffs btw country classified means
+
+Stats and ML:
+Regress - 3
+Dec Trees - 3
+SVMs - 1
+Rand Forest - 3
+Neural Net - 1
+Time Series - 1
+Unsup - 3
+semi-sup - 1
+graphical  - 1
+other - 2
+
+Stats and ML projects:
+Beer picker, PACs
+
+Quant Soc Sci:
+Causal inference - 2
+All else - 1
+
+Quant Soc Sci projects:
+Use case for causal inference in IMR project
+
+Data Types:
+Text -3
+Relat db -4
+Text data nlp -1
+network graph data -2
+vid or aud -1
+data from sensors -1
+data > 1tb -3
+geospatial -1
+other -3
+
+Data type descrips:
+Relat db at work. 
+APIs at home
+graph db lite at work
+text at work
+data>1tb at work
+
+Data type projs:
+PAC proj
+IMR proj
+beer proj
+
+
+Github
+
+Transportation, internat dev, other
+
+All but pub safety, internat dev
+
+Social good work compelling:
+Govs: Military, working with Innamo on recording
+Volunteer: Plant trees, canvassing, Eagle Scout
+Personal: PAC, protesting
+Two sentences most reward/frustrating:
+
+Three best qualities for team:
+I listen/assume people are smart, I'm patient, I find middle grounds
+Frustrating part of teamwork is factionalism.
+Organizing tools to work with a team
+
+Future plans post DSSG.
+I want to be independent and confident. 
+
+Anything else? 
