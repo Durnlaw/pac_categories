@@ -86,8 +86,8 @@ print("cycle id count: ", len( cycle_id))
 #> So we have some if criteria to write to a csv intermittently, so that if we get kicked we don't lose much.
 
 #. Set the limits of starting and ending
-start_row = 832
-end_row = 1032
+start_row = 1032
+end_row = 1232
 
 #. Set the limits to be used in the for loop
 test_iter = start_row - 1

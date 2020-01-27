@@ -6,20 +6,28 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn.preprocessing import scale
+
+import sklearn.metrics as sum_pac_vote_data
+from sklearn import datasets
+from sklearn.metrics import confusion_matrix, classification_report
 
 pac_vote_totals_path = 'C:\\Programming\\repos\\Open-secrets\\data\\sum_pac_vote_data.csv'
 
+# Add temporal element to: org -> candiate -> bill
+# another idea to make connection: carry magnitude through
 
 #? We may need to come back to this, but for now, we need the label data as org_name
 # pac_vote_totals = pd.read_csv(pac_vote_totals_path, index_col='org_name')
 pac_vote_totals = pd.read_csv(pac_vote_totals_path)
-#? I briefly took out these columns because I believed they were skewing the PCA, but it doesn't seems o
-# pac_vote_totals = pac_vote_totals.drop(['indivs'], axis=1)
-# pac_vote_totals = pac_vote_totals.drop(['pacs'], axis=1)
-# pac_vote_totals = pac_vote_totals.drop(['total'], axis=1)
+#! We are dropping these columns for now as they carry magnitude while the bill counts do not.
+pac_vote_totals = pac_vote_totals.drop(['indivs'], axis=1)
+pac_vote_totals = pac_vote_totals.drop(['pacs'], axis=1)
+pac_vote_totals = pac_vote_totals.drop(['total'], axis=1)
 print(pac_vote_totals.shape)
-#? For now we won't drop this, because PCA should drop it for us. It's redundant
-# pac_vote_totals = pac_vote_totals.drop(['total'], axis=1)
+
 
 #. We will split the data along labels and features though.
 pac_numbers = pac_vote_totals.drop('org_name', 1)
@@ -28,28 +36,60 @@ print(pac_numbers.shape)
 print(pac_labels.shape)
 
 #. Let's split into train and test for numbers and labels
-pac_numbers_train, pac_numbers_test, pac_labels_train, pac_labels_test = train_test_split(
+X_train, X_test, y_train, y_test = train_test_split(
     pac_numbers, pac_labels, test_size=0.2, random_state=0)
 
 #. PCA requires normalized data, so we will do standard scalar normalization
 sc = StandardScaler()
-pac_numbers_train = sc.fit_transform(pac_numbers_train)
-pac_numbers_test = sc.transform(pac_numbers_test)
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
 
 #. PCA time
 pca = PCA(n_components = 4)
-pac_numbers_train= pca.fit_transform(pac_numbers_train)
-pac_numbers_test = pca.transform(pac_numbers_test)
+X_train= pca.fit_transform(X_train)
+X_test = pca.transform(X_test)
 
 #. Results!
 print(pca.explained_variance_ratio_)
 print(pca.singular_values_)
 
+# to see how thge ORIGINAL columns influence your N PCA columns you can graph with "scree" graph
+
+#. Figure out how many clusters we need. I settled on 9 here through use of the distortion graph and the actual values
+distortions = []
+for i in range(1, 15):
+    km = KMeans(
+        n_clusters=i, init='random',
+        n_init=10, max_iter=300,
+        tol=1e-04, random_state=0
+    )
+    km.fit(X_train)
+    distortions.append(km.inertia_)
+print(distortions)
+
+# plot
+plt.plot(range(1, 15), distortions, marker='o')
+plt.xlabel('Number of clusters')
+plt.ylabel('Distortion')
+plt.show()
 
 
 
+km = KMeans(
+    n_clusters=9, init='random',
+    n_init=10, max_iter=300,
+    tol=1e-04, random_state=0
+)
 
+km_fit = km.fit(X_train)
 
+labels = km.predict(X_train)
+
+centroids = km.cluster_centers_
+
+print(centroids)
+
+print(classification_report(y_pred))
 
 #. Correlation matrix time
 
@@ -70,12 +110,5 @@ print(pca.singular_values_)
 #             square=True, linewidths=.5, cbar_kws={"shrink": .5})
 
 # plt.show()
-
-
-
-
-
-
-
 
 
