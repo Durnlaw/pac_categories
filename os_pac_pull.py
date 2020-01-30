@@ -86,8 +86,8 @@ print("cycle id count: ", len( cycle_id))
 #> So we have some if criteria to write to a csv intermittently, so that if we get kicked we don't lose much.
 
 #. Set the limits of starting and ending
-start_row = 1032
-end_row = 1232
+start_row = 1512
+end_row = 1712
 
 #. Set the limits to be used in the for loop
 test_iter = start_row - 1
@@ -100,6 +100,7 @@ final_donations = pd.DataFrame()
 
 #. For each row in the leg_2010 file
 for polit_cycle in leg_id:
+    print('Current Row:', test_iter+1)
 
     #. First if logic. If it's test_iter = end_row. Then break.
     if test_iter == end_row:

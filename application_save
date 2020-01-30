@@ -25,13 +25,13 @@ Other - 2
 
 Tell about prog xp:
 
-I am a self-taught programmer. My economics major taught me to analyze problems, but to solve them I learned Python. Python offers the flexibility to tackle most problems I run into. 
+I am a self-taught programmer. My economics major got me started in analysis, but to solve some of the tougher issues, I turned to Python. I found flexibility here needed to handle a wide variety of problems. 
 
-An early professional project of mine concerned the automation of an excel report. The customers' manually created report frequently resulted in human-caused inaccuracies. I worked with the customer in a one-on-one environment to gather requirements, like including a QA process to garner trust in the automated report. Once they were comfortable, the new pandas-based report took over and was moved to production.
+One of my earliest projects entailed automating an excel report as human error and inconsistencies repeatedly marred the customer's current process. I worked with the customer one-on-one to gather requirements, like including their familiar QA process in the automated report. Having gained their trust, my pandas-based report replaced the old process and entere production.
 
-Recently, I performed data entry duties with a political campaign. The campaign collected over ten thousand records that were entered into a browser-based system. After entering 100 names, I determined I could increase my input if I automated all non-keyboard activity. Using pyautogui, I built an algorithm in Python that input all constituent information, saved their profile, and returned to the starting page. While using this algorithm, I independently entered over one tenth of the records.
+Recently, I had the pleasure of performing data entry for a local political campaign that collected over ten thousand records. The entry system was browser based and required keyboard and mouse inputs to navigate. After entering 100 names, I determined I could increase my input if I automated all mouse activity. Using pyautogui, I built an algorithm in Python that input all constituent information, saved the profile, and returned to the starting page. By the end of the campaign, I entered over 1000 records.
 
-Currently, I am working on a personal project that clusters political action committees based on their voting records in Congress (through donations to Congresspeople). This project utilizes csv, urllib.request, and json to pull data, performs pandas-based ETL work, and clusters in scikit-learn. The resulting clusters help to illustrate priorities of a PAC donations. All of this work is public on github.
+Political money is a passion of mine and is the subject of my most recent project. The target goal is to cluster political action committees based on their voting records in Congress (through donations to Congresspeople). This project utilizes csv, urllib.request, and json to pull data, performs pandas-based ETL work, and unsupervised machine learning in scikit-learn. The resulting clusters work to illustrate priorities of a PAC's donations; all of which are public on github.
 
 
 Data Analysis Tools
@@ -46,8 +46,15 @@ Julia - 1
 Other - 1
 
 Data Analysis projects:
-PAC project: 
-IMR Univ study: Compare many datasets and show mean diffs btw country classified means
+
+My two main data analysis tools are Python and SQL, with occasional usage of Stata.
+
+Primarily I use SQL and Python for descriptive and diagnostic analysis. Working as an analyst in PNC's Anti-Money Laundering department requires ad-hoc checks of customer data. These are varied, but often focus on finding a specific customer by name, account number, or transaction. Due to the increasing amount of requests, I took it upon myself to create a repeatable version of this ad-hoc request. To implement this, I use Python (with PySpark). PySpark provides a convenient wrapper for this diagnostic work by managing each sql result as a dataframe that is manipulable. 
+
+I make further use of Python in a personal project focused on a analyzing internation healthcare systems and how their respective Infant Mortality Rates and Human Development Indexes. I rely on pandas for the majority of my data cleansing, preperation, and organization. The project utilizes data sets from the CIA, UN, and UNICEF; all of which use different data structures and country lists. In lieu of a home based SQL server, I rely on pandas to both house and manipulate my data. 
+
+While earning my undergrad at Allegheny College, I utilized stata for two regression models. Stata jump-started my interest in data analysis. I was mesmerized by regressions and the specifity they offered. I do not lean on Stata now, but I would happily use the software again.  
+
 
 Stats and ML:
 Regress - 3
@@ -68,8 +75,10 @@ Quant Soc Sci:
 Causal inference - 2
 All else - 1
 
-Quant Soc Sci projects:
-Use case for causal inference in IMR project
+Quant Soc Sci projects:\
+
+My experience with Quantitative Social Science methods is for the moment theoretical, although I am taking steps to incorporate them into my future work. Of the methods researched, I am favoring causal inference because I believe it will help me fill in two gaps with my international healthcare systems project: the scope of analyzing healthcare systems is colossal and ethics is a limiting factor on data collection in healthcare (rightfully so). From my foray into QSS methods, I believe that causal inference will help me to overcome these two problems. I am very interested in learning more about QSS methods and excited apply them both professionally and personally. 
+
 
 Data Types:
 Text -3
@@ -83,11 +92,13 @@ geospatial -1
 other -3
 
 Data type descrips:
-Relat db at work. 
-APIs at home
-graph db lite at work
-text at work
-data>1tb at work
+
+I specialize in using data from text files and relational databases and have experience processing json (API) and graph data. My experiences comes from a mixture of personal and professional work. 
+
+I utilize SQL (Hive/Impala) and pySpark daily to access, pull datasets from, and write to PNC's Hadoop cluster. The datasets can vary in size and complexity from precise queries to views over 1TB. Often I am called upon to add external data files to the Hadoop cluster as well. For this, I will lean on pandas and pySpark for accessing and uploading respectively. 
+
+Personally, I have leaned on SQLite before, but I have not yet tackled projects so large that it requires a database. I work with text files on most of my projects and access them with pandas. In a recent project, I began to work with json files and called them through an API. Once called, I stored the data in text files for the duration of the project.
+
 
 Data type projs:
 PAC proj
@@ -102,17 +113,39 @@ Transportation, internat dev, other
 All but pub safety, internat dev
 
 Social good work compelling:
+
+
+
+The Data Science for Social Good fellowship would formalize two passions of mine: data analysis and helping my 
+
+For as long as I remember, I desire to help people. I am driven by the idea that service to others and to a community is an attainable and laudable goal. I find social good work to be the fastest and most long lasting way to enact positive change for those I love and my community at large. 
+
+This desire to serve drove me to achieve Eagle Scout and to enlist in the Air National Guard before I graduated High School. Service led me to volunteering with local and state political campaigns. I volunteered in eight campaigns in the past three years by canvassing and performing data entry for them and organized a protest in 2016. 
+
+I carry this energy forward into my personal work. My most recent project focuses on Political Action Committee donations and how the recipients of these funds vote. 
+
 Govs: Military, working with Innamo on recording
 Volunteer: Plant trees, canvassing, Eagle Scout
 Personal: PAC, protesting
 Two sentences most reward/frustrating:
 
 Three best qualities for team:
-I listen/assume people are smart, I'm patient, I find middle grounds
-Frustrating part of teamwork is factionalism.
-Organizing tools to work with a team
+
+I enjoy working in a team environment because I learn the most during discussion. I think this experience is rewarding for me because I respect each person's experiences, I am patient, and encourage open communication. 
+
+A few months ago, my team designed a visualization for an internal customer at PNC that did not meet the customer's standards. One of my team members became haughty over this and the meeting became confrontational. Interceeding, I asked the customer why our product was sub-par. Upon expanding on the reason, we all determined it was very rational. It is easy to be offended by a critique, but it's important to remain patient and respect others' knowledge.
+
+In a separate meeting I attended, a coworker of mine left exasperated. The topic pertained to a machine learning algorithm and it's effect on a report. I contacted them and they explained that the way the material was presented left them feeling stupid and slighted. I encouraged them to reach out to the presenter to explain those feelings and re-explained the content of the meeting in a more approachable manner. They followed up with the presenter and the situation did not occur again. 
+
+Factionalism is the most frustrating part of team environments. It is tempting to take sides even in small disagreements and this can corrupt progress. I find the fastest resolution is to identify a middle ground between the two parties as a conflict arises. Suggesting a compromise through open communication works well because it is a subtle reminder to the team that we are solving the same problem. Although factionalism is frustrating, I focus on the shared goal instead of the small separating nuances. 
+
+I am comfortable with many organization methods including calendar, email, slack, github, clickup. The correct method of organization varies per project and the number of participants, so I switch as necessary to accomodate the project. Concerning my personal work, I keep my file names neat and my notes very explicit. My experience troubleshooting Comm Nav systems with the Air Force taught me that specificity is important to ensure any team member can solve a problem.
+
 
 Future plans post DSSG.
-I want to be independent and confident. 
+
+After completing the Fellowship, I will apply to organizations and campaigns that share my values for economic justice for the working class. Since becoming more politically active in 2017, I have sought an employer that allows me to marry my passion for economic justice and data analysis. The dedicated experience of DSSG will make a strong case to future employers that I have both the passion and skill set they are seeking.
+
+DSSG will help me build a foundation to become a self sufficient data scientist in the fight for economic justice.
 
 Anything else? 

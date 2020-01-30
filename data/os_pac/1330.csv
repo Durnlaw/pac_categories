@@ -1,0 +1,61 @@
+,cand_name,cid,indivs,org_name,pacs,total,cycle
+0,Jason Smith (R),N00035282,9000,DaVita Inc,10000,19000,2018
+1,Jason Smith (R),N00035282,8750,"Bryan, Cave et al",7250,16000,2018
+2,Jason Smith (R),N00035282,5400,Anheuser-Busch,10000,15400,2018
+3,Jason Smith (R),N00035282,4950,Northwestern Mutual Life Insurance,10000,14950,2018
+4,Jason Smith (R),N00035282,5400,Boeing Co,8000,13400,2018
+5,Jason Smith (R),N00035282,5400,Enterprise Rent-A-Car,7500,12900,2018
+6,Jason Smith (R),N00035282,4000,Eli Lilly & Co,8500,12500,2018
+7,Jason Smith (R),N00035282,2500,Emerson Electric,10000,12500,2018
+8,Jason Smith (R),N00035282,2500,Leggett & Platt,10000,12500,2018
+9,Jason Smith (R),N00035282,1500,Comcast Corp,10000,11500,2018
+0,Cory Booker (D),N00035267,154044,NorPAC,4827,158871,2014
+1,Cory Booker (D),N00035267,153900,"Paul, Weiss et al",0,153900,2014
+2,Cory Booker (D),N00035267,82600,Sullivan & Cromwell,0,82600,2014
+3,Cory Booker (D),N00035267,72700,Goldman Sachs,5000,77700,2014
+4,Cory Booker (D),N00035267,76498,Cole Schotz PC,0,76498,2014
+5,Cory Booker (D),N00035267,69800,Gibbons PC,5000,74800,2014
+6,Cory Booker (D),N00035267,54400,DLA Piper,20000,74400,2014
+7,Cory Booker (D),N00035267,58000,Prudential Financial,12500,70500,2014
+8,Cory Booker (D),N00035267,62300,Greenberg Traurig LLP,7000,69300,2014
+9,Cory Booker (D),N00035267,68600,Kirkland & Ellis,0,68600,2014
+0,Katherine Clark (D),N00035278,12600,EMILY's List,10000,22600,2014
+1,Katherine Clark (D),N00035278,20800,First Realty Management,0,20800,2014
+2,Katherine Clark (D),N00035278,18200,O'Connor Professional Group,0,18200,2014
+3,Katherine Clark (D),N00035278,0,Ironworkers Union,15000,15000,2014
+4,Katherine Clark (D),N00035278,0,Laborers Union,15000,15000,2014
+5,Katherine Clark (D),N00035278,0,Raytheon Co,15000,15000,2014
+6,Katherine Clark (D),N00035278,0,American Assn for Justice,12500,12500,2014
+7,Katherine Clark (D),N00035278,11700,Beacon Health Options,0,11700,2014
+8,Katherine Clark (D),N00035278,11600,Commonwealth of Massachusetts,0,11600,2014
+9,Katherine Clark (D),N00035278,11400,Ischemix,0,11400,2014
+0,Katherine Clark (D),N00035278,20250,JStreetPAC,0,20250,2016
+1,Katherine Clark (D),N00035278,2500,Raytheon Co,10000,12500,2016
+2,Katherine Clark (D),N00035278,10800,Brown Rudnick Llp,0,10800,2016
+3,Katherine Clark (D),N00035278,0,AbbVie Inc,10000,10000,2016
+4,Katherine Clark (D),N00035278,0,Alkermes Inc,10000,10000,2016
+5,Katherine Clark (D),N00035278,0,American Assn for Justice,10000,10000,2016
+6,Katherine Clark (D),N00035278,0,American Crystal Sugar,10000,10000,2016
+7,Katherine Clark (D),N00035278,0,American Federation of Teachers,10000,10000,2016
+8,Katherine Clark (D),N00035278,0,Carpenters & Joiners Union,10000,10000,2016
+9,Katherine Clark (D),N00035278,0,International Brotherhood of Electrical Workers,10000,10000,2016
+0,Katherine Clark (D),N00035278,16166,JStreetPAC,0,16166,2018
+1,Katherine Clark (D),N00035278,8550,State Street Bank & Trust,6000,14550,2018
+2,Katherine Clark (D),N00035278,10800,eScription Inc,0,10800,2018
+3,Katherine Clark (D),N00035278,10600,Ischemix,0,10600,2018
+4,Katherine Clark (D),N00035278,4200,Raytheon Co,6000,10200,2018
+5,Katherine Clark (D),N00035278,0,American College of Radiology,10000,10000,2018
+6,Katherine Clark (D),N00035278,0,American Crystal Sugar,10000,10000,2018
+7,Katherine Clark (D),N00035278,0,American Federation of State/Cnty/Munic Employees,10000,10000,2018
+8,Katherine Clark (D),N00035278,0,American Federation of Teachers,10000,10000,2018
+9,Katherine Clark (D),N00035278,0,Anheuser-Busch,10000,10000,2018
+0,Bradley Byrne (R),N00035380,0,Every Republican is Crucial PAC,25000,25000,2014
+1,Bradley Byrne (R),N00035380,22600,Pilot Catastrophe Services,0,22600,2014
+2,Bradley Byrne (R),N00035380,500,Blue Cross/Blue Shield of Alabama,20000,20500,2014
+3,Bradley Byrne (R),N00035380,250,Alabama Power,17500,17750,2014
+4,Bradley Byrne (R),N00035380,0,Honeywell International,17000,17000,2014
+5,Bradley Byrne (R),N00035380,0,National Assn of Realtors,16000,16000,2014
+6,Bradley Byrne (R),N00035380,0,Alabama Farmers Federation,15000,15000,2014
+7,Bradley Byrne (R),N00035380,0,Defend America PAC,15000,15000,2014
+8,Bradley Byrne (R),N00035380,0,Drummond Co,15000,15000,2014
+9,Bradley Byrne (R),N00035380,0,National Auto Dealers Assn,15000,15000,2014
