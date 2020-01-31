@@ -11,7 +11,7 @@ Rank prof in areas
 Comp Prog - Some
 Comp Sci - Some
 Trad Stat - Some
-Machine Learn - Some 
+Machine Learn - Some
 Soc Sci - Some
 XP on real - Some
 Experi Design - None
@@ -23,9 +23,9 @@ Python - 5
 C - 1
 Other - 2
 
-Tell about prog xp:
+Tell about prog xp: Nathan reviewed
 
-I am a self-taught programmer. My economics major got me started in analysis, but to solve some of the tougher issues, I turned to Python. I found flexibility here needed to handle a wide variety of problems. 
+I am a self-taught programmer. My economics major got me started in analysis, but to solve some of the tougher issues, I turned to Python. I found flexibility here needed to handle a wide variety of problems.
 
 One of my earliest projects entailed automating an excel report as human error and inconsistencies repeatedly marred the customer's current process. I worked with the customer one-on-one to gather requirements, like including their familiar QA process in the automated report. Having gained their trust, my pandas-based report replaced the old process and entere production.
 
@@ -45,15 +45,15 @@ Stata - 2
 Julia - 1
 Other - 1
 
-Data Analysis projects:
+Data Analysis projects: Andrew reviewed. (Considered expanding on pers projs?)
 
 My two main data analysis tools are Python and SQL, with occasional usage of Stata.
 
-Primarily I use SQL and Python for descriptive and diagnostic analysis. Working as an analyst in PNC's Anti-Money Laundering department requires ad-hoc checks of customer data. These are varied, but often focus on finding a specific customer by name, account number, or transaction. Due to the increasing amount of requests, I took it upon myself to create a repeatable version of this ad-hoc request. To implement this, I use Python (with PySpark). PySpark provides a convenient wrapper for this diagnostic work by managing each sql result as a dataframe that is manipulable. 
+Primarily I use SQL and Python for descriptive and diagnostic analysis. Working as an analyst in PNC's Anti-Money Laundering department requires ad-hoc checks of customer data. These are varied, but often focus on finding a specific customer by name, account number, or transaction. Due to the increasing amount of requests, I took it upon myself to create a repeatable version of this ad-hoc request. To implement this, I use Python (with PySpark). PySpark provides a convenient wrapper for this diagnostic work by managing each sql result as a dataframe that is manipulable.
 
-I make further use of Python in a personal project focused on a analyzing internation healthcare systems and how their respective Infant Mortality Rates and Human Development Indexes. I rely on pandas for the majority of my data cleansing, preperation, and organization. The project utilizes data sets from the CIA, UN, and UNICEF; all of which use different data structures and country lists. In lieu of a home based SQL server, I rely on pandas to both house and manipulate my data. 
+I make further use of Python in a personal project focused on analyzing international healthcare systems and how their respective Infant Mortality Rates and Human Development Indexes. I rely on pandas for the majority of my data cleansing, preparation, and organization. The project utilizes data sets from the CIA, UN, and UNICEF; all of which use different data structures and country lists. In lieu of a home based SQL server, I rely on pandas to both house and manipulate my data.
 
-While earning my undergrad at Allegheny College, I utilized stata for two regression models. Stata jump-started my interest in data analysis. I was mesmerized by regressions and the specifity they offered. I do not lean on Stata now, but I would happily use the software again.  
+While earning my undergrad at Allegheny College, I utilized stata for two regression models. Stata jump-started my interest in data analysis. I was mesmerized by regressions and the specificity they offered. I do not lean on Stata now, but I would happily use the software again.  
 
 
 Stats and ML:
@@ -75,9 +75,9 @@ Quant Soc Sci:
 Causal inference - 2
 All else - 1
 
-Quant Soc Sci projects:\
+Quant Soc Sci projects: Nathan reviewed
 
-My experience with Quantitative Social Science methods is for the moment theoretical, although I am taking steps to incorporate them into my future work. Of the methods researched, I am favoring causal inference because I believe it will help me fill in two gaps with my international healthcare systems project: the scope of analyzing healthcare systems is colossal and ethics is a limiting factor on data collection in healthcare (rightfully so). From my foray into QSS methods, I believe that causal inference will help me to overcome these two problems. I am very interested in learning more about QSS methods and excited apply them both professionally and personally. 
+My experience with Quantitative Social Science methods is for the moment theoretical, although I am taking steps to incorporate them into my future work. Of the methods researched, I am favoring causal inference because I believe it will help me fill in two gaps with my international healthcare systems project: the scope of analyzing healthcare systems is colossal and ethics is a limiting factor on data collection in healthcare (rightfully so). From my foray into QSS methods, I believe that causal inference will help me to overcome these two problems. I am very interested in learning more about QSS methods and excited to apply them both professionally and personally.
 
 
 Data Types:
@@ -93,9 +93,9 @@ other -3
 
 Data type descrips:
 
-I specialize in using data from text files and relational databases and have experience processing json (API) and graph data. My experiences comes from a mixture of personal and professional work. 
+I specialize in using data from text files and relational databases and have experience processing json (API) and graph data. My experiences come from a mixture of personal and professional work.
 
-I utilize SQL (Hive/Impala) and pySpark daily to access, pull datasets from, and write to PNC's Hadoop cluster. The datasets can vary in size and complexity from precise queries to views over 1TB. Often I am called upon to add external data files to the Hadoop cluster as well. For this, I will lean on pandas and pySpark for accessing and uploading respectively. 
+I utilize SQL (Hive/Impala) and pySpark daily to access, pull datasets from, and write to PNC's Hadoop cluster. The datasets can vary in size and complexity from precise queries to views over 1TB. Often I am called upon to add external data files to the Hadoop cluster as well. For this, I will lean on pandas and pySpark for accessing and uploading respectively.
 
 Personally, I have leaned on SQLite before, but I have not yet tackled projects so large that it requires a database. I work with text files on most of my projects and access them with pandas. In a recent project, I began to work with json files and called them through an API. Once called, I stored the data in text files for the duration of the project.
 
@@ -104,48 +104,46 @@ Data type projs:
 PAC proj
 IMR proj
 beer proj
+Think of work. Cash vault, cv hrc, chiflado?
 
 
 Github
-
 Transportation, internat dev, other
-
 All but pub safety, internat dev
 
-Social good work compelling:
+
+Social good work compelling: Mom reviewed
+
+Like many in Western PA, my working class family instilled in me an intense desire to serve others. From an early age, I became engrossed in Boy Scouting and grew to lead the troop as Senior Patrol Leader. During this time, I participated in scores of volunteer projects, and organized forty volunteers to create one hundred Neck Gaiters for deployed Armed Forces as my Eagle Scout project. In 2009, I fulfilled two lifelong goals by enlisting with the Air National Guard and standing for my Court of Honor. The ANG was appealing to me as I could serve my country while still attending college.
+
+I achieved high honors in all three military training schools and attained a student leadership position at my last station. Returning to civilian life, I attended Allegheny College and deployed once during my senior year to Kyrgyzstan in support of operation Enduring Freedom. Balancing both commitments was difficult, but rewarding. With my final deployment to Guam, I was honorably discharged in 2016. 
+
+I believed I would set aside service for a few years. Instead, I picked up independent, data analysis projects that focused on healthcare and political donations. These would later inspire my current projects. In 2017, I found myself organizing a protest in support of Net Neutrality. By the start of 2018, I began to canvass for Sara Innamorato; after her primary victory, I found two other, like-minded state candidates and canvassed for them until election day. This past cycle, I volunteered time to four local candidates for data entry and canvassing as well. Supporting candidates that believe in working class economic justice has become a focal point of my political volunteering.
+
+Inspired by my past research into political donations, I am pursuing an attempt to cluster PAC’s based on the voting records of the Congresspeople they donate to. An underlying objective of this project and passion of mine is to help people see past learned prejudices - to see how we all want economic justice. The public is buffeted by narratives that establish boundaries between members of the working class; narratives that insist we support policies that hurt each other instead of lift all of us. I believe that by illustrating which priorities are important to PACs (by their voting records), I can explain how many organizations do not represent the working class.
+
+During my very first canvass shift, I had the pleasure of speaking to a friend and supporter of Dom Costa (Sara Innamorato’s opponent). This voter was an active member of his community and appreciated the work Dom did in Harrisburg, but did not agree with Dom’s platform. The most frustrating part of the conversation was penetrating his belief that Dom would represent him best, despite accepting donations from organizations that don’t support his values. But the most rewarding moment was watching his posture change as I explained Sara’s platform and his smile as he told me he would remove the Dom sign from his yard. 
 
 
 
-The Data Science for Social Good fellowship would formalize two passions of mine: data analysis and helping my 
+Three best qualities for team: Mom reviewed
 
-For as long as I remember, I desire to help people. I am driven by the idea that service to others and to a community is an attainable and laudable goal. I find social good work to be the fastest and most long lasting way to enact positive change for those I love and my community at large. 
+I enjoy working in a team environment because I learn the most during discussion. I think this experience is rewarding for me because I respect each person's experiences, I am patient, and encourage open communication.
 
-This desire to serve drove me to achieve Eagle Scout and to enlist in the Air National Guard before I graduated High School. Service led me to volunteering with local and state political campaigns. I volunteered in eight campaigns in the past three years by canvassing and performing data entry for them and organized a protest in 2016. 
+A few months ago, my team designed a visualization for an internal customer at PNC that did not meet the customer's standards. One of my team members became haughty over this and the meeting became confrontational. Interceding, I asked the customer why our product was sub-par. Upon expanding on the reason, we all determined it was very rational. It is easy to be offended by a critique, but it's important to remain patient and respect others' knowledge.
 
-I carry this energy forward into my personal work. My most recent project focuses on Political Action Committee donations and how the recipients of these funds vote. 
+In a separate meeting I attended, a coworker of mine left exasperated. The topic pertained to a machine learning algorithm and its effect on a report. I contacted them and they explained that the way the material was presented left them feeling stupid and slighted. I encouraged them to reach out to the presenter to explain those feelings and re-explained the content of the meeting in a more approachable manner. They followed up with the presenter and the situation did not occur again.
 
-Govs: Military, working with Innamo on recording
-Volunteer: Plant trees, canvassing, Eagle Scout
-Personal: PAC, protesting
-Two sentences most reward/frustrating:
+Factionalism is the most frustrating part of team environments. It is tempting to take sides even in small disagreements and this can corrupt progress. I find the fastest resolution is to identify a middle ground between the two parties as a conflict arises. Suggesting a compromise through open communication works well because it is a subtle reminder to the team that we are solving the same problem. Although factionalism is frustrating, I focus on the shared goal instead of the small separating nuances.
 
-Three best qualities for team:
-
-I enjoy working in a team environment because I learn the most during discussion. I think this experience is rewarding for me because I respect each person's experiences, I am patient, and encourage open communication. 
-
-A few months ago, my team designed a visualization for an internal customer at PNC that did not meet the customer's standards. One of my team members became haughty over this and the meeting became confrontational. Interceeding, I asked the customer why our product was sub-par. Upon expanding on the reason, we all determined it was very rational. It is easy to be offended by a critique, but it's important to remain patient and respect others' knowledge.
-
-In a separate meeting I attended, a coworker of mine left exasperated. The topic pertained to a machine learning algorithm and it's effect on a report. I contacted them and they explained that the way the material was presented left them feeling stupid and slighted. I encouraged them to reach out to the presenter to explain those feelings and re-explained the content of the meeting in a more approachable manner. They followed up with the presenter and the situation did not occur again. 
-
-Factionalism is the most frustrating part of team environments. It is tempting to take sides even in small disagreements and this can corrupt progress. I find the fastest resolution is to identify a middle ground between the two parties as a conflict arises. Suggesting a compromise through open communication works well because it is a subtle reminder to the team that we are solving the same problem. Although factionalism is frustrating, I focus on the shared goal instead of the small separating nuances. 
-
-I am comfortable with many organization methods including calendar, email, slack, github, clickup. The correct method of organization varies per project and the number of participants, so I switch as necessary to accomodate the project. Concerning my personal work, I keep my file names neat and my notes very explicit. My experience troubleshooting Comm Nav systems with the Air Force taught me that specificity is important to ensure any team member can solve a problem.
+I am comfortable with many organization methods including calendar, email, slack, github, clickup. The correct method of organization varies per project and the number of participants, so I switch as necessary to accommodate the project. Concerning my personal work, I keep my file names neat and my notes very explicit. My experience troubleshooting Comm Nav systems with the Air Force taught me that specificity is important to ensure any team member can solve a problem.
 
 
-Future plans post DSSG.
+Future plans post DSSG. Steve reviewed
 
 After completing the Fellowship, I will apply to organizations and campaigns that share my values for economic justice for the working class. Since becoming more politically active in 2017, I have sought an employer that allows me to marry my passion for economic justice and data analysis. The dedicated experience of DSSG will make a strong case to future employers that I have both the passion and skill set they are seeking.
 
 DSSG will help me build a foundation to become a self sufficient data scientist in the fight for economic justice.
 
-Anything else? 
+Anything else?
+
