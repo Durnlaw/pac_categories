@@ -18,7 +18,7 @@ Experi Design - None
 Data Manip - Expert
 Viz - Some
 
-Prog Lang
+Prog Lang:
 Python - 5
 C - 1
 Other - 2
@@ -27,11 +27,11 @@ Tell about prog xp: Nathan reviewed
 
 I am a self-taught programmer. My economics major got me started in analysis, but to solve some of the tougher issues, I turned to Python. I found flexibility here needed to handle a wide variety of problems.
 
-One of my earliest projects entailed automating an excel report as human error and inconsistencies repeatedly marred the customer's current process. I worked with the customer one-on-one to gather requirements, like including their familiar QA process in the automated report. Having gained their trust, my pandas-based report replaced the old process and entere production.
+One of my earliest projects entailed automating an excel report as human error and inconsistencies repeatedly marred the customer's current process. I worked with the customer one-on-one to gather requirements, like including their familiar QA process in the automated report. Having gained their trust, my pandas-based report replaced the old process and entered production.
 
 Recently, I had the pleasure of performing data entry for a local political campaign that collected over ten thousand records. The entry system was browser based and required keyboard and mouse inputs to navigate. After entering 100 names, I determined I could increase my input if I automated all mouse activity. Using pyautogui, I built an algorithm in Python that input all constituent information, saved the profile, and returned to the starting page. By the end of the campaign, I entered over 1000 records.
 
-Political money is a passion of mine and is the subject of my most recent project. The target goal is to cluster political action committees based on their voting records in Congress (through donations to Congresspeople). This project utilizes csv, urllib.request, and json to pull data, performs pandas-based ETL work, and unsupervised machine learning in scikit-learn. The resulting clusters work to illustrate priorities of a PAC's donations; all of which are public on github.
+Political money is a passion of mine and is the subject of my most recent project. The target goal is to cluster political action committees based on their voting records in Congress (through donations to Congresspeople). This project utilizes csv, urllib.request, and json to pull data, performs pandas-based ETL work, and clustering in scikit-learn. The resulting clusters work to illustrate priorities of a PAC's donations; all of which are public on github.
 
 
 Data Analysis Tools
@@ -49,11 +49,11 @@ Data Analysis projects: Andrew reviewed. (Considered expanding on pers projs?)
 
 My two main data analysis tools are Python and SQL, with occasional usage of Stata.
 
-Primarily I use SQL and Python for descriptive and diagnostic analysis. Working as an analyst in PNC's Anti-Money Laundering department requires ad-hoc checks of customer data. These are varied, but often focus on finding a specific customer by name, account number, or transaction. Due to the increasing amount of requests, I took it upon myself to create a repeatable version of this ad-hoc request. To implement this, I use Python (with PySpark). PySpark provides a convenient wrapper for this diagnostic work by managing each sql result as a dataframe that is manipulable.
+Primarily I use SQL and Python for descriptive and diagnostic analysis. Working as an analyst in PNC's Anti-Money Laundering department requires ad-hoc checks of customer data. These are varied, but often focus on finding a specific customer by name, account number, or transaction. Due to the increasing amount of requests, I took it upon myself to create a repeatable version of this ad-hoc process. To implement this, I use Python (with PySpark). PySpark provides a convenient wrapper for this diagnostic work by managing each sql result as a dataframe that is manipulable.
 
-I make further use of Python in a personal project focused on analyzing international healthcare systems and how their respective Infant Mortality Rates and Human Development Indexes. I rely on pandas for the majority of my data cleansing, preparation, and organization. The project utilizes data sets from the CIA, UN, and UNICEF; all of which use different data structures and country lists. In lieu of a home based SQL server, I rely on pandas to both house and manipulate my data.
+I make further use of Python in a personal project focused on analyzing international healthcare systems and their respective Infant Mortality Rates and Human Development Indexes. I rely on pandas for the majority of my data cleansing, preparation, and organization. The project utilizes data sets from the CIA, UN, and UNICEF; all of which use different data structures and country lists. In lieu of a home based SQL server, I rely on pandas to both house and manipulate my data.
 
-While earning my undergrad at Allegheny College, I utilized stata for two regression models. Stata jump-started my interest in data analysis. I was mesmerized by regressions and the specificity they offered. I do not lean on Stata now, but I would happily use the software again.  
+While earning my undergrad at Allegheny College, I utilized stata for two regression models. Stata jump-started my interest in data analysis. I was mesmerized by regressions and the specificity they offered. I do not use Stata now, but I would happily use the software again.  
 
 
 Stats and ML:
@@ -69,11 +69,17 @@ graphical  - 1
 other - 2
 
 Stats and ML projects:
-Beer picker, PACs
+
+In 2014, I planned and executed a study focused on an esport (League of Legends) and team compositions played. My study partner Tim and I aimed to find a correlation between a team’s selected “champions” and gold earned. Each team’s champions dictate the tactics the team would use to win during the match. At the time, over 90 champions were played and each team selected five champions, one for each player. 
+
+Due to the variance of champions selected, we created five models, one for each in-game position. Each model used data for the top four most played champions in each position. Isolating the positions and limiting the champion population focused the model on the effects of Champion A over Champion B specifically in Position X. We chose to utilize linear regressions through stata and selected gold earned by a player’s team as a target variable. Combined (team) gold was a good target variable to ensure we were not analyzing one player’s ability, but the effect of a champion on an average team. 
+
+The results were conclusive for two positions and led to the creation of several metrics, most significant of which was Assistrate. This metric demonstrated a quantitative difference in objective coordination between teams. The full results were presented at the semester’s end to my advisor, Dr. Ormiston and influenced my future analysis of League. Currently, I am discussing these conclusions with a student of Allegheny College and hope to pass what we learned forward to them.
 
 Quant Soc Sci:
 Causal inference - 2
 All else - 1
+
 
 Quant Soc Sci projects: Nathan reviewed
 
@@ -91,20 +97,31 @@ data > 1tb -3
 geospatial -1
 other -3
 
-Data type descrips:
+Data type descrips: Andrew reviewed
 
-I specialize in using data from text files and relational databases and have experience processing json (API) and graph data. My experiences come from a mixture of personal and professional work.
+My data experiences come from a mixture of personal and professional work. I specialize in using data from text files and relational databases and have experience processing json data through APIs. I address this further in the data-related projects section. 
 
-I utilize SQL (Hive/Impala) and pySpark daily to access, pull datasets from, and write to PNC's Hadoop cluster. The datasets can vary in size and complexity from precise queries to views over 1TB. Often I am called upon to add external data files to the Hadoop cluster as well. For this, I will lean on pandas and pySpark for accessing and uploading respectively.
+I utilize SQL (Hive/Impala) and pySpark daily to access, pull datasets from, and write to PNC's Hadoop cluster. The datasets can vary in size and complexity from precise queries to views over 1TB. Often I am called upon to add external data files to the Hadoop cluster as well. For these tasks, I use pandas and pySpark for accessing and uploading respectively.
 
-Personally, I have leaned on SQLite before, but I have not yet tackled projects so large that it requires a database. I work with text files on most of my projects and access them with pandas. In a recent project, I began to work with json files and called them through an API. Once called, I stored the data in text files for the duration of the project.
+In my personal projects, I prefer to work with text files and access them with pandas. Recently, I began to work with json files that are called through an API for use in a project that analyzes PAC donations.
+
+
 
 
 Data type projs:
-PAC proj
-IMR proj
+
+I am working on an independent project that finds similarities between political action committees based on the total votes of all Congresspeople each PAC donates to. The intent of this project is not to draw conclusions concerning the correlation between what kind of PAC donates to what kind of candidate, nor is the intent to find a correlation between a PAC’s influence over Congresspeople. This project views a PAC contribution, of any size, to one candidate as an endorsement of all bills the candidate votes “Yes” on. This consideration is without regard to what the PAC’s views are publicly and instead treats all “Yes” votes as tacit agreement by the PAC. This decision is made for two reasons: public statements of PACs may not align with private decisions and Congresspeople may have different perspectives on the donation’s purpose. This setup should remove prejudice and assumptions toward how much a PAC donates, how a PAC is viewed publicly, and the importance a Congressperson places on specific donations.
+
+All data is acquired through three sources: opensecrets.org, voteview.com, and a public github (https://github.com/unitedstates/congress-legislators). The project considers all bills that require a Presidential signature voted on by House and Senate members from 2010 to present day. 2010 is selected as a starting year because this is the year that Citizens United v FEC was decided. For the moment, the project uses the top ten donors for each Congressperson per political cycle they ran, because that dataset is available to me.
+
+As mentioned before, this project utilizes several python libraries including csv, urllib.request, and json to pull data, performs pandas-based ETL work, and scikit-learn for clustering algorithms. The testing dataset aggregates vote tallies by PAC id with columns representing Congressional bills and amendments. Utilizing principal component analysis, I reduce several thousand dimensions to four dimensions that explain 95% of the variation in the data. After this, I implement k-means and employ a distortion graph to determine a cluster count at nine. The results of this k-means model look very positive. Next steps include visualizing the clusters and presenting my findings publicly through https://github.com/Durnlaw/pac_categories and a blog post or user interface. Future iterations of this project will include a full list of PAC donations, followed by more model iterations.
+
+Last October, I developed a model in python that married two passions of mine: data analysis and beer brewing. After locating an open database of international beers, I proposed a hypothesis that beer types would be influenced by their alcohol by volume and which state(US) they were made in. Some pandas-based data cleansing was necessary and due to a short dataset, I converted state codes to US regions. I tested with several model types and had the most success with decision trees. The experience was instructive and left me considering new data sources that I could incorporate to increase the accuracy of my model. All of this project is public at https://github.com/Durnlaw/beer_guesser. 
+
+
+
+Cash vault hrc
 beer proj
-Think of work. Cash vault, cv hrc, chiflado?
 
 
 Github
@@ -114,9 +131,9 @@ All but pub safety, internat dev
 
 Social good work compelling: Mom reviewed
 
-Like many in Western PA, my working class family instilled in me an intense desire to serve others. From an early age, I became engrossed in Boy Scouting and grew to lead the troop as Senior Patrol Leader. During this time, I participated in scores of volunteer projects, and organized forty volunteers to create one hundred Neck Gaiters for deployed Armed Forces as my Eagle Scout project. In 2009, I fulfilled two lifelong goals by enlisting with the Air National Guard and standing for my Court of Honor. The ANG was appealing to me as I could serve my country while still attending college.
+Like many in Western PA, my working class family instilled in me an intense desire to serve others. From an early age, I became engrossed in Boy Scouting and grew to lead the troop as Senior Patrol Leader. During this time, I participated in scores of volunteer projects, and organized forty volunteers to create one hundred Neck Gaiters for deployed Armed Forces as my Eagle Scout project. In 2009, I fulfilled two lifelong goals by enlisting with the Air National Guard and standing for my Eagle Scout Court of Honor. 
 
-I achieved high honors in all three military training schools and attained a student leadership position at my last station. Returning to civilian life, I attended Allegheny College and deployed once during my senior year to Kyrgyzstan in support of operation Enduring Freedom. Balancing both commitments was difficult, but rewarding. With my final deployment to Guam, I was honorably discharged in 2016. 
+The ANG was appealing to me as I could serve my country while still attending college. I achieved high honors in all three military training schools and attained a student leadership position at my last station. Returning to civilian life, I attended Allegheny College and deployed once during my senior year to Kyrgyzstan in support of operation Enduring Freedom. Balancing both commitments was difficult, but rewarding. With my final deployment to Guam, I was honorably discharged in 2016. 
 
 I believed I would set aside service for a few years. Instead, I picked up independent, data analysis projects that focused on healthcare and political donations. These would later inspire my current projects. In 2017, I found myself organizing a protest in support of Net Neutrality. By the start of 2018, I began to canvass for Sara Innamorato; after her primary victory, I found two other, like-minded state candidates and canvassed for them until election day. This past cycle, I volunteered time to four local candidates for data entry and canvassing as well. Supporting candidates that believe in working class economic justice has become a focal point of my political volunteering.
 
@@ -136,12 +153,12 @@ In a separate meeting I attended, a coworker of mine left exasperated. The topic
 
 Factionalism is the most frustrating part of team environments. It is tempting to take sides even in small disagreements and this can corrupt progress. I find the fastest resolution is to identify a middle ground between the two parties as a conflict arises. Suggesting a compromise through open communication works well because it is a subtle reminder to the team that we are solving the same problem. Although factionalism is frustrating, I focus on the shared goal instead of the small separating nuances.
 
-I am comfortable with many organization methods including calendar, email, slack, github, clickup. The correct method of organization varies per project and the number of participants, so I switch as necessary to accommodate the project. Concerning my personal work, I keep my file names neat and my notes very explicit. My experience troubleshooting Comm Nav systems with the Air Force taught me that specificity is important to ensure any team member can solve a problem.
+I am comfortable with many organization methods including calendar, email, slack, github, and clickup. The correct method of organization varies per project and the number of participants, so I switch as necessary to accommodate the project. Concerning my personal work, I keep my file names neat and my notes very explicit. My experience troubleshooting Comm Nav systems with the Air Force taught me that specificity is important to ensure any team member can solve a problem.
 
 
 Future plans post DSSG. Steve reviewed
 
-After completing the Fellowship, I will apply to organizations and campaigns that share my values for economic justice for the working class. Since becoming more politically active in 2017, I have sought an employer that allows me to marry my passion for economic justice and data analysis. The dedicated experience of DSSG will make a strong case to future employers that I have both the passion and skill set they are seeking.
+After completing the Fellowship, I will apply to organizations and campaigns that share my values for economic justice for the working class. Since becoming more politically active in 2017, I have sought an employer that allows me to marry my passion for economic justice and data analysis. DSSG is also a great opportunity to increase my data science collaboration experience with like minded individuals. The dedicated experience of DSSG will make a strong case to future employers that I have both the passion and skill set they are seeking.
 
 DSSG will help me build a foundation to become a self sufficient data scientist in the fight for economic justice.
 

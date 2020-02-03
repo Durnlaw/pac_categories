@@ -15,3 +15,12 @@ NO:
 DBSCAN							Specifically doesn't work with high dimensional data
 OPTICS							Similar to DBSCAN but will more often mark periphery points as noise
 birch							Cannot support more dimensions than 20
+
+
+
+
+
+1. not enough data
+2. data is missing many variables (inherently, need more datasets or something to explain cooralations)
+3. assumptions you made along the way are incorrect, missing data, or augmenting it improperly
+4. dimensional reduction was wrong, or wrong clustering (OR WRONG HYPOERPARAMETERS TO THOSE ALGS)
