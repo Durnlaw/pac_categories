@@ -1,0 +1,64 @@
+Skill sets:
+
+Data Munging - DM
+Programming - Prog
+Data Analysis - DA
+Stats and Machine Learning - ML
+Visualization - Viz
+Quant Social Science - QSS
+Politics - Pol
+ 
+Current projects:
+Beer picker
+            DM - Excel, python
+            ML - Decision Tree
+            Viz - Very basic in matplotlib
+Reach clicker
+            Prog - Keeb and mouse input
+            Pol - Campaign support
+Politician donations to votes
+
+            DM - APIs, python, sqllite
+            Prog - APIs
+            DA - Basic means, sums, party aggregates
+            	ML - There is a solution here.
+            	Viz - A good bubble chart or sanky could be useful. Or a time series model
+            Pol - Connection btw donations and votes
+Effect of Univ Healthcare
+	- Are high infant mortality rates caused by a lack of a universal health care system?
+	Specifically why Infant Mortality Rate rises.
+			DM - Excel
+			DA - Basic means, sums, country plan understanding
+				ML - This could be something as low as a regression model or decision tree/rand forest
+					Consider running one hot encoding
+				Viz - Potentially something visceral 
+			Pol - Analysis of healthcare on country metrics
+ 
+Quant Social Science:
+	Casual Inference - understanding cause from effect
+	Matching Propensity Score Matching - technique to esimate effect of policy by accounting for other covariates (in the population that aren't the target variable)
+	Instrumental Variables - 
+	Regression Discontinuity - Measuring causal effects of interventions at a threshold above and below the original assigned location to infer if the original assigned location is accurate
+	Natural Experiments - 
+
+Reference Criteria:
+	Political
+		Service - Russ
+		Campaigns - Russ
+		Volunteering - Russ
+	Analytical/ML
+		Programming skills - Bruce/Joe
+		ETL skills - Bruce/Joe
+		ML skills - Bruce/Joe
+		Analysis - Bruce/Joe
+	Soft:
+		Presenting/ Laymans terms - Russ/Bruce/Joe
+		Personability - Russ/Bruce/Joe
+		Work Ethic - Russ/Bruce/Joe
+
+For fixing in future
+	Some Cycles in leg_2010 come out to odd years
+	Temporal consideration
+	dedup the open seecrets pull. or make it better
+	Change local folder name to pac_categories
+	Reference Andrew chat for Fit and Predict
