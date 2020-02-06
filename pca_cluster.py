@@ -1,4 +1,6 @@
 
+#> Now that all of our data is together, we run PCA and clustering algorithms on the result of vv_votes_2_PACs.py
+
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
@@ -14,10 +16,9 @@ import sklearn.metrics as sum_pac_vote_data
 from sklearn import datasets
 from sklearn.metrics import confusion_matrix, classification_report
 
+#. Let's oepn our main data file
 pac_vote_totals_path = 'C:\\Programming\\repos\\Open-secrets\\data\\sum_pac_vote_data.csv'
 
-# Add temporal element to: org -> candiate -> bill
-# another idea to make connection: carry magnitude through
 
 #? We may need to come back to this, but for now, we need the label data as org_name
 # pac_vote_totals = pd.read_csv(pac_vote_totals_path, index_col='org_name')
@@ -53,9 +54,9 @@ X_test = pca.transform(X_test)
 print(pca.explained_variance_ratio_)
 print(pca.singular_values_)
 
-# to see how thge ORIGINAL columns influence your N PCA columns you can graph with "scree" graph
 
-#. Figure out how many clusters we need. I settled on 9 here through use of the distortion graph and the actual values
+#> Figure out how many clusters we need. I settled on 9 here through use of the distortion
+#> graph and the actual values
 distortions = []
 for i in range(1, 15):
     km = KMeans(
@@ -67,20 +68,21 @@ for i in range(1, 15):
     distortions.append(km.inertia_)
 print(distortions)
 
-# plot
+#. plot them out for analysis
 plt.plot(range(1, 15), distortions, marker='o')
 plt.xlabel('Number of clusters')
 plt.ylabel('Distortion')
 plt.show()
 
 
-
+#> Start building the kmeans model!
 km = KMeans(
     n_clusters=9, init='random',
     n_init=10, max_iter=300,
     tol=1e-04, random_state=0
 )
 
+#. Fit and predict the model
 km_fit = km.fit(X_train)
 
 labels = km.predict(X_train)
@@ -91,7 +93,19 @@ print(centroids)
 
 print(classification_report(y_pred))
 
-#. Correlation matrix time
+
+
+
+
+
+
+
+
+
+
+
+#? Consider using a correlation matrix
+# Correlation matrix time
 
 # # Compute the correlation matrix
 # corr = pac_vote_totals.corr()

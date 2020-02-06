@@ -1,4 +1,8 @@
 
+#> This program is used to combine all >2010 House/Senate bills into one csv from bulk data. Specifically
+#> targets bills requiring presidential signature. Includes a key to identify the bill by Chamber,
+#> Congress, and rollnumber. The output is used for pivoting later.
+
 import pandas as pd
 import numpy as np
 import os

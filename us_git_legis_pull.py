@@ -11,6 +11,7 @@ import csv
 
 def leg_pull(item):
 
+    #> Get the url connection up and running.
     final_url = item
 
     #. Pretend to be Mozilla. This might need to be updated.
@@ -33,7 +34,11 @@ def leg_pull(item):
     decoded_body = json.loads(decoded_body)
     # print(type(decoded_body))
 
+    #> Pull all congresspeople in the json file, then pull needed cycle information for
+    #> served cycle
     term_results = []
+
+    #. x being each congressperson
     for x in decoded_body:
         my_dict = {}
         my_dict['bioguide']=x.get('id').get('bioguide')
@@ -43,6 +48,7 @@ def leg_pull(item):
         my_dict['last']=x.get('name').get('last')
         my_dict['first_last']=x.get('name').get('official_full')
         y_iter = 1
+        #. y being each cycle for each congressperson
         for y in x['terms']:
             my_dict2 = {}
             my_dict2['bioguide'] = my_dict['bioguide']
@@ -69,6 +75,7 @@ def leg_pull(item):
 
     #. This needs to placed into a dataframe because otherwise it's a list and breaks
     term_results = pd.DataFrame(term_results)
+    #. Change these columns to date
     term_results['term_end'] = pd.to_datetime(term_results['term_end'])
     term_results['term_start'] = pd.to_datetime(term_results['term_start'])
 
@@ -92,6 +99,7 @@ def leg_pull(item):
     return (leg_2010)
 
 
+#> There are two sources on information to all serving or served congresspeople
 sources = [
     'https://theunitedstates.io/congress-legislators/legislators-current.json'
     , 'https://theunitedstates.io/congress-legislators/legislators-historical.json'

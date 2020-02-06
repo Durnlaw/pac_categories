@@ -1,3 +1,12 @@
+
+#> Used to find the sum donated by each PAC and the number of times a PAC voted on a specific bill via a Congressperson.
+#> All bills are featured in this csv.
+
+#> This program incorporates all work from above.
+    #. us_git_legis_pull to pull the congresspeople keys.
+    #. vv_roll_nmbr_key to find the unique bill identifiers and pivot them.
+    #. os_pac_pull to find the donations made to each candidate.
+
 import pandas as pd
 import numpy as np
 import io

@@ -1,4 +1,6 @@
 
+#> Used to pull the top ten PAC donors to each congressperson for each congressional cycle served.
+#> Returns csv's every 5 API calls
 
 import urllib.request
 import json
@@ -6,8 +8,6 @@ import pprint
 import pandas as pd
 import csv
 import time
-#? Not sure what this does.
-printer = pprint.PrettyPrinter(indent=4)
 
 
 OS_API = '3f4cda9299c74fc3c21ff8e077a7a6e1'
@@ -82,7 +82,7 @@ print("cycle id count: ", len( cycle_id))
 # cycle_id = ['2020', '2018', '2016']
 
 #> Ok we have to set up the actual loops that call the API now. The overall goal is to get our program to call
-#> the full 200 limit each day, but avoid problems we have with getting kicked out of the API early. 
+#> the full 200 limit each day, but avoid problems we have with getting kicked out of the API early.
 #> So we have some if criteria to write to a csv intermittently, so that if we get kicked we don't lose much.
 
 #. Set the limits of starting and ending
