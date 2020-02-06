@@ -18,7 +18,7 @@ All data is acquired through three sources: opensecrets.org (OS), voteview.com (
 
    This program incorporates all work from above. us_git_legis_pull to pull the congresspeople keys. vv_roll_nmbr_key to find the unique bill identifiers and pivot them. os_pac_pull to find the donations made to each candidate.
    
-5.pca_cluster.py -> Now that all of our data is together, we run PCA and clustering algorithms on the result of vv_votes_2_PACs.py
+5. pca_cluster.py -> Now that all of our data is together, we run PCA and clustering algorithms on the result of vv_votes_2_PACs.py
 
 # Next Steps and Possible Improvements:
 Next steps include visualizing the clusters and potenitally a blog post or user interface to help users navigate the analysis. Future iterations of this project will include a full list of PAC donations, followed by more model iterations. Under consideration is adding temporal consideration to the donation logic. At the moment, this model assumes a PAC makes a donation in 2016 while analyzing all votes by a Congressperson even back to 2010. We might find more accuracy if we restrict the model to only group on votes made from the earliest donation forward. 
