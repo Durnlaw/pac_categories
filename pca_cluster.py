@@ -38,10 +38,10 @@ print("PAC Numbers' Shape:", pac_numbers.shape)
 print("PAC Labels' Shape:", pac_labels.shape)
 
 #. Let's split into train and test for numbers and labels
-X_train, X_test, y_train, y_test = train_test_split(
-    pac_numbers, pac_labels, test_size=0.2, random_state=0)
+X_train, X_test, pac_names_train, pac_names_test = train_test_split(
+    pac_numbers, pac_labels, test_size=0.2, random_state=1)
 
-#> Begin setting up PCA so that 
+#> Begin setting up PCA so that
 #. PCA requires normalized data, so we will do standard scalar normalization
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
@@ -53,13 +53,13 @@ X_train= pca.fit_transform(X_train)
 X_test = pca.transform(X_test)
 
 #. Results!
-print(pca.explained_variance_ratio_)
-print(pca.singular_values_)
+print('Explained variance of each compoent/dimension:', pca.explained_variance_ratio_)
+# print(pca.singular_values_)
 
 
-#> Figure out how many clusters we need. I settled on 9 here through use of the distortion
-#> graph and the actual values
-distortions = []
+#> Figure out how many clusters we need. I settled on 9 here through use of a distortion
+#> graph made using the elbow method. Measuring how far away each point is from its centroid.
+inertia = []
 for i in range(1, 15):
     km = KMeans(
         n_clusters=i, init='random',
@@ -67,14 +67,15 @@ for i in range(1, 15):
         tol=1e-04, random_state=0
     )
     km.fit(X_train)
-    distortions.append(km.inertia_)
-print(distortions)
+    inertia.append(km.inertia_)
+print('Cluster Inertia:', inertia)
 
 #. plot them out for analysis
-plt.plot(range(1, 15), distortions, marker='o')
+plt.plot(range(1, 15), inertia, marker='o')
 plt.xlabel('Number of clusters')
-plt.ylabel('Distortion')
-plt.show()
+plt.ylabel('Inertia')
+#? If you want to print the Elbow Method:
+# plt.show()
 
 
 #> Start building the kmeans model!
@@ -84,16 +85,32 @@ km = KMeans(
     tol=1e-04, random_state=0
 )
 
-#. Fit and predict the model
+#. Fit the model and fit_predict the test data
 km_fit = km.fit(X_train)
+clusters = km.fit_predict(X_test)
 
-labels = km.predict(X_train)
+#? For reference
+# print(clusters)
+# print(pac_names_test)
 
+#. Identify the centroids and print for reference
 centroids = km.cluster_centers_
-
 print(centroids)
 
-print(classification_report(y_pred))
+#. Align the clusters to each Pac Name for further analysis
+cluster_pac_list = []
+for x, y in zip(clusters, pac_names_test):
+    cluster_pac_list.append([x, y])
+
+#. Transfer to a dataframe for legibility
+cluster_pac_pd = pd.DataFrame(cluster_pac_list, columns=['Cluster', 'PAC Name'])
+
+#. Print the cluster group counts for reference
+grouped_pd = cluster_pac_pd.groupby('Cluster').count()
+print(grouped_pd)
+
+
+
 
 
 
