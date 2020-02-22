@@ -10,8 +10,6 @@ import csv
 import time
 
 
-OS_API = '3f4cda9299c74fc3c21ff8e077a7a6e1'
-
 def OS_donations(cand, cycle):
     api_key = OS_API
     url_Base = 'https://www.opensecrets.org/api/?method=candContrib'
