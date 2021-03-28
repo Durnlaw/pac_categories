@@ -1,6 +1,6 @@
 # Pac Category
 
-This project that finds similarities between political action committees based on the total votes of all Congresspeople each PAC donates to. 
+This project finds similarities between political action committees based on the total votes of all Congresspeople each PAC donates to. 
 
 The intent of this project is not to draw conclusions concerning the correlation between what kind of PAC donates to what kind of candidate, nor is the intent to find a correlation between a PAC’s influence over Congresspeople. Those kind of studies are numerous already. 
 
