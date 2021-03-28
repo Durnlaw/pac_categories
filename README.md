@@ -2,16 +2,16 @@
 
 This project finds similarities between political action committees based on the total votes of all Congresspeople each PAC donates to. 
 
-The intent of this project is not to draw conclusions concerning the correlation between what kind of PAC donates to what kind of candidate, nor is the intent to find a correlation between a PAC’s influence over Congresspeople. Those kind of studies are numerous already. 
+This project does not draw conclusions concerning the correlation between which PAC donates to which candidate, nor does it draw a correlation between a PAC’s influence over Congresspeople. Those kind of studies are numerous already. 
 
 # Considerations: 
 This project views a PAC contribution, of any size, to one candidate as an endorsement of all bills the candidate votes “Yes” on. This consideration is without regard to what the PAC’s views are publicly and instead treats all “Yes” votes as tacit agreement by the PAC. This decision is made for two reasons: public statements of PACs may not align with private decisions and Congresspeople may have different perspectives on the donation’s purpose. This setup should remove prejudice and assumptions toward how much a PAC donates, how a PAC is viewed publicly, and the importance a Congressperson places on specific donations.
 
 # Data used:
-All data is acquired through three sources: opensecrets.org (OS), voteview.com (VV), and a public [github](https://github.com/unitedstates/congress-legislators). This public github is mostly used as a joiner between OS and VV. The project considers all bills that require a Presidential signature voted on by House and Senate members from 2010 to present day. 2010 is selected as a starting year because this is the year that Citizens United v FEC was decided. For the moment, the project uses the top ten donors for each Congressperson per political cycle they ran, because that dataset is available to me.
+All data is acquired through three sources: opensecrets.org (OS), voteview.com (VV), and a public [github](https://github.com/unitedstates/congress-legislators). This public github (third source) is mostly used as a joiner between OS and VV. The project considers all bills that require a Presidential signature and bills that were voted on by House and Senate members from 2010 to present day. 2010 is selected as a starting year because this is the year that Citizens United v FEC was decided. For the moment, the project uses the top ten donors for each Congressperson per political cycle they ran, because that dataset is available to me.
 
 # Overall Process:
-1. us_git_legis_pull.py -> Used to pull all Congresspeople before 2010 and sets up a key to allow connection to voteview and opensecrets data. It creates as csv.
+1. us_git_legis_pull.py -> Used to pull all Congresspeople before 2010 and sets up a key to allow connection to voteview and opensecrets data. It creates a csv.
 2. vv_roll_nmbr_key.py -> Used to combine all >2010 House/Senate bills into one csv from bulk data. Specifically targets bills requiring presidential signature. Includes a key to identify the bill by Chamber, Congress, and rollnumber. Used for pivoting later.
 3. os_pac_pull.py -> Used to pull the top ten PAC donors to each congressperson for each congressional cycle served. Returns csv's every 5 API calls
 4. vv_votes_2_PACs.py -> Used to find the sum donated by each PAC and the number of times a PAC voted on a specific bill via a Congressperson. All bills are featured in this csv.
